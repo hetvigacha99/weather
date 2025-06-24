@@ -9,7 +9,7 @@ import numpy as np
 import pickle
 import streamlit as st
 
-loaded_model = pickle.load(open("D:\internship\sav_files\weather_models.sav",'rb'))
+loaded_model = pickle.load(open("weather_models.sav",'rb'))
 def weather_prediction(input_data):
     input_data_array=np.asarray(input_data)
     input_data_reshape=input_data_array.reshape(1,-1)
@@ -24,7 +24,7 @@ def weather_prediction(input_data):
     else:
         return "Snowy"
 def main():
-    st.title("weather predition")
+    st.title("weather prediction using ml")
     Temperature = st.text_input('Temperature (°C)')
     Humidity = st.text_input('Humidity (%)')
     WindSpeed = st.text_input('Wind Speed (km/h)')
